@@ -1,0 +1,42 @@
+resource "aws_subnet" "Subnet_1" {
+  vpc_id     = aws_vpc.my_vpc.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "proud_subnet"
+  }
+}
+
+
+/*resource "aws_instance" "my_first_terafrom" {
+  ami           = "ami-0b0dcb5067f052a63"
+  instance_type = "t2.micro"
+  
+    tags = {
+   # Name = "Ubuntu server"
+  }
+}  */
+
+
+
+resource "aws_vpc" "my_vpc" {
+    cidr_block = "10.0.0.0/16"
+    tags = {
+        Name = "Production"
+
+    }
+  
+}
+
+resource "aws_subnet" "prosubet_1" {
+  vpc_id = "aws_vpc.my_vpc.id"
+  cidr_block = "10.0.1.0/24"
+  tags = {
+    "Name" = "Prod-subnet"
+  }
+  
+}
+
+
+
+
